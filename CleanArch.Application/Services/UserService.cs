@@ -1,8 +1,8 @@
 ﻿using CleanArch.Application.Interfaces;
 using CleanArch.Application.ViewModels;
-using CleanArch.Domain.Encrypter;
 using CleanArch.Domain.Interfaces;
 using CleanArch.Domain.Models;
+
 
 namespace CleanArch.Application.Services
 {

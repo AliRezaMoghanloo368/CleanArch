@@ -1,8 +1,8 @@
 ﻿using CleanArch.Application.Interfaces;
+using CleanArch.Application.Security;
 using CleanArch.Application.Services;
 using CleanArch.Data.Context;
 using CleanArch.Data.Repositories;
-using CleanArch.Domain.Encrypter;
 using CleanArch.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +18,7 @@ namespace CleanArch.IoC
             //Application Layer
             service.AddScoped<IUserService, UserService>();
             service.AddScoped<IEncrypter, Encrypter>();
+
 
 
             //Data Layer
