@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CleanArch.Application.Exceptions
+namespace CleanArch.Domain.Exceptions
 {
     public class ActioException : Exception
     {

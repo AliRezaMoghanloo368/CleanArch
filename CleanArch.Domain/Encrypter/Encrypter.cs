@@ -1,8 +1,6 @@
-﻿using CleanArch.Application.Interfaces;
-using System;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 
-namespace CleanArch.Application.Security
+namespace CleanArch.Domain.Encrypter
 {
     public class Encrypter : IEncrypter
     {

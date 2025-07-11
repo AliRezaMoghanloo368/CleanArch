@@ -1,5 +1,5 @@
-﻿using CleanArch.Domain.Models.Exceptions;
-using SiteProject.Identity.Domain.Services;
+﻿using CleanArch.Domain.Encrypter;
+using CleanArch.Domain.Exceptions;
 
 namespace CleanArch.Domain.Models
 {
@@ -13,7 +13,7 @@ namespace CleanArch.Domain.Models
         public DateTime CreateAt { get; protected set; }
         public User()
         {
-
+            Id = Guid.NewGuid();
         }
 
         public User(string phoneNumber, string name)
