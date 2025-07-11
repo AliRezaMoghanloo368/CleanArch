@@ -23,6 +23,11 @@ namespace CleanArch.Data.Repositories
             return await _context.Users.AnyAsync(u => u.Name == userName);
         }
 
+        public async Task<User> GetUserForLogin(string userName, string password)
+        {
+            return await _context.Users.FirstOrDefaultAsync(x => x.Name == userName && x.Password == password);
+        }
+
         public async Task<User> GetWithUserName(string userName)
         {
             return await _context.Users.FirstOrDefaultAsync(x => x.Name == userName);

@@ -5,12 +5,12 @@ namespace CleanArch.Domain.Models
 {
     public class User
     {
-        public Guid Id { get; protected set; }
-        public string Name { get; protected set; }
-        public string PhoneNumber { get; protected set; }
-        public string Password { get; protected set; }
-        public string Salt { get; protected set; }
-        public DateTime CreateAt { get; protected set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Password { get; set; }
+        public string Salt { get; set; }
+        public DateTime CreateAt { get; set; }
         public User()
         {
             Id = Guid.NewGuid();

@@ -1,4 +1,5 @@
 using CleanArch.IoC;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace CleanArch.Mvc
 {
@@ -10,7 +11,18 @@ namespace CleanArch.Mvc
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            #region IoC
             builder.Services.RegisterServices(builder.Configuration); //in dependency container class
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option =>
+                {
+                    option.LoginPath = "/Account/Login";
+                    option.LogoutPath = "/Account/Logout";
+                    option.ExpireTimeSpan = TimeSpan.FromDays(365);
+                });
+            #endregion
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

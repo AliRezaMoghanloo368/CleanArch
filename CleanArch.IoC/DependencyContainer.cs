@@ -3,6 +3,7 @@ using CleanArch.Application.Services;
 using CleanArch.Data.Context;
 using CleanArch.Data.Repositories;
 using CleanArch.Domain.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

@@ -7,5 +7,6 @@ namespace CleanArch.Domain.Interfaces
         Task<bool> CheckUserExist(string id);
         Task<bool> CheckWithUserName(string userName);
         Task<User> GetWithUserName(string userName);
+        Task<User> GetUserForLogin(string userName, string password);
     }
 }
