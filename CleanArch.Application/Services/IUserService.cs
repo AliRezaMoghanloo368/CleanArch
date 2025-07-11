@@ -1,6 +1,6 @@
 ﻿using CleanArch.Application.ViewModels;
 
-namespace CleanArch.Application.Services.UserService
+namespace CleanArch.Application.Services
 {
     public interface IUserService
     {
