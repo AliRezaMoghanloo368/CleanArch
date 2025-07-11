@@ -1,7 +1,8 @@
-﻿using System;
+﻿using CleanArch.Application.Interfaces;
+using System;
 using System.Security.Cryptography;
 
-namespace CleanArch.Domain.Encrypter
+namespace CleanArch.Application.Security
 {
     public class Encrypter : IEncrypter
     {
@@ -25,7 +26,7 @@ namespace CleanArch.Domain.Encrypter
 
         private static byte[] GetBytes(string value)
         {
-            var bytes =new byte[value.Length * sizeof(char)];
+            var bytes = new byte[value.Length * sizeof(char)];
             Buffer.BlockCopy(value.ToCharArray(), 0, bytes, 0, bytes.Length);
             return bytes;
         }
