@@ -16,6 +16,9 @@ namespace OnlineShop.Persistence.EntityValidator
             builder.Property(x => x.PhoneNumber)
                 .IsRequired()
                 .HasMaxLength(15);
+            builder.Property(x => x.Password)
+                .IsRequired()
+                .HasMaxLength(512);
         }
     }
 }
