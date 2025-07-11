@@ -1,4 +1,4 @@
-using CleanArch.Application.Services;
+using CleanArch.Application.Interfaces;
 using CleanArch.Application.ViewModels;
 using CleanArch.Mvc.Models;
 using Microsoft.AspNetCore.Mvc;
