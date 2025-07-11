@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArch.Data.Migrations
 {
     [DbContext(typeof(CleanArchDbContext))]
-    [Migration("20250711081338_Init")]
+    [Migration("20250711094519_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -36,7 +36,8 @@ namespace CleanArch.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -44,7 +45,8 @@ namespace CleanArch.Data.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("Salt")
                         .IsRequired()
@@ -52,7 +54,7 @@ namespace CleanArch.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 #pragma warning restore 612, 618
         }

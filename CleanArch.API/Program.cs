@@ -1,4 +1,6 @@
 
+using CleanArch.IoC;
+
 namespace CleanArch.API
 {
     public class Program
@@ -13,7 +15,7 @@ namespace CleanArch.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            builder.Services.RegisterServices(builder.Configuration); //in dependency container class
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

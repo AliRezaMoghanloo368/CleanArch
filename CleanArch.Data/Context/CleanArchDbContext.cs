@@ -1,5 +1,6 @@
 ﻿using CleanArch.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using OnlineShop.Persistence.EntityValidator;
 
 namespace CleanArch.Data.Context
 {
@@ -11,14 +12,10 @@ namespace CleanArch.Data.Context
 
         public DbSet<User> Users { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //    modelBuilder.ApplyConfiguration(new CategoryValidator());
-        //    modelBuilder.ApplyConfiguration(new ProductValidator());
-        //    modelBuilder.ApplyConfiguration(new UserValidator());
-        //    modelBuilder.ApplyConfiguration(new ShoppingCartValidator());
-        //    modelBuilder.ApplyConfiguration(new CartItemValidator());
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new UserValidator());
+        }
     }
 }
