@@ -1,3 +1,5 @@
+using CleanArch.IoC;
+
 namespace CleanArch.Mvc
 {
     public class Program
@@ -8,7 +10,7 @@ namespace CleanArch.Mvc
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.RegisterServices(builder.Configuration); //in dependency container class
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
