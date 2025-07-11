@@ -1,5 +1,6 @@
-﻿using CleanArch.Domain.Models.Exceptions;
-using SiteProject.Identity.Domain.Services;
+﻿using CleanArch.Domain.Encrypter;
+using CleanArch.Domain.Models.Exceptions;
+//using SiteProject.Identity.Domain.Services;
 
 namespace CleanArch.Domain.Models
 {
