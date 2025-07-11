@@ -38,7 +38,8 @@ namespace CleanArch.Mvc.Controllers
             {
                 Name = register.UserName,
                 PhoneNumber = register.PhoneNumber,
-                Password = register.Password
+                Password = register.Password,
+                Salt = "11111111112"
             };
             _userService.AddUser(user);
             return View("SuccessRegister", register);

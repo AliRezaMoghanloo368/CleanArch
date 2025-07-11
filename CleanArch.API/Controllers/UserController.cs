@@ -28,10 +28,10 @@ namespace CleanArch.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddUser([FromBody] UserInputModel userInput)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+            //if (!ModelState.IsValid)
+            //    return BadRequest(ModelState);
 
-            await _userService.AddUser(userInput);
+            //await _userService.AddUser(userInput);
             return Ok(new { message = "User added" });
         }
 
