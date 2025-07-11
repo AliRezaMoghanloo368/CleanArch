@@ -1,4 +1,4 @@
-﻿namespace CleanArch.Domain.Encrypter
+﻿namespace CleanArch.Application.Interfaces
 {
     public interface IEncrypter
     {
