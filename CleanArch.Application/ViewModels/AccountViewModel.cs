@@ -28,7 +28,7 @@ namespace CleanArch.Application.ViewModels
     public class LoginViewModel
     {
         [Required(ErrorMessage = "لطفا {0} را وارد کنید ")]
-        [Display(Name = "")]
+        [Display(Name = "نام کاربری")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "لطفا {0} را وارد کنید ")]

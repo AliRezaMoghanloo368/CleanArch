@@ -2,6 +2,13 @@ html {
   font-size: 14px;
 }
 
+* {
+    direction: rtl;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: Sahel, Helvetica, Arial, sans-serif;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -17,9 +24,9 @@ html {
   min-height: 100%;
 }
 
-body {
+/*body {
   margin-bottom: 60px;
-}
+}*/
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 

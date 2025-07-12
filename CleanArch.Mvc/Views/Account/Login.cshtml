@@ -50,7 +50,7 @@
     <div class="top"></div>
     <div class="bottom"></div>
     <div class="center">
-        <h2>Please Sign In</h2>
+        <h2>ورود</h2>
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -65,7 +65,8 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                    @Html.DisplayNameFor(model => model.RememberMe)
+                    <input style="width: fit-content;" class="form-check-input" asp-for="RememberMe" />
                 </label>
             </div>
             <div class="form-group">
