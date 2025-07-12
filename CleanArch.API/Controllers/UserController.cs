@@ -8,12 +8,8 @@ namespace CleanArch.API.Controllers
 {
     public class UserController : IControllerBase
     {
-        private readonly IUserService _userService;
-
-        public UserController(IUserService userService)
-        {
-            _userService = userService;
-        }
+        public UserController(IUserService userService) 
+            :base(userService) { }
 
         // GET: api/user
         [HttpGet]
