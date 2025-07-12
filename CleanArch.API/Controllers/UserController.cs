@@ -1,14 +1,12 @@
-﻿using CleanArch.Application.Interfaces;
+﻿
+using CleanArch.Application.Interfaces;
 using CleanArch.Application.ViewModels;
-using CleanArch.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace CleanArch.API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class UserController : IControllerBase
     {
         private readonly IUserService _userService;
 
@@ -26,10 +24,10 @@ namespace CleanArch.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddUser([FromBody] UserInputModel userInput)
+        public async Task<IActionResult> AddUser([FromBody] LoginViewModel userInput)
         {
-            //if (!ModelState.IsValid)
-            //    return BadRequest(ModelState);
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             //await _userService.AddUser(userInput);
             return Ok(new { message = "User added" });
