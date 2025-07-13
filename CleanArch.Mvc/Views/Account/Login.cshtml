@@ -29,9 +29,9 @@
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div style=" margin-top: 15px;" class="form-group form-check">
-                <label class="form-check-label">
-                    <input style="width: 15px;" class="form-check-input" asp-for="RememberMe" />
+            <div style=" margin-top: 15px;">
+                <input style="width: 15px;" class="form-check-input" asp-for="RememberMe" />
+                <label asp-for="RememberMe" class="form-check-label">
                     @Html.DisplayNameFor(model => model.RememberMe)
                 </label>
             </div>
