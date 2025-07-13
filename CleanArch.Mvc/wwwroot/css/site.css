@@ -47,8 +47,8 @@ body {
 }
 
     .container:hover .top:before, .container:hover .top:after, .container:hover .bottom:before, .container:hover .bottom:after, .container:active .top:before, .container:active .top:after, .container:active .bottom:before, .container:active .bottom:after {
-        margin-left: 200px;
-        transform-origin: -200px 50%;
+        margin-left: 300px;
+        transform-origin: -300px 50%;
         transition-delay: 0s;
     }
 
@@ -114,9 +114,9 @@ body {
 
     .center input {
         width: 100%;
-        padding: 15px;
+/*        padding: 15px;*/
         margin: 5px;
-        border-radius: 1px;
+/*        border-radius: 1px;*/
         border: 1px solid #ccc;
         font-family: inherit;
     }

@@ -29,10 +29,10 @@
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
+            <div style=" margin-top: 15px;" class="form-group form-check">
                 <label class="form-check-label">
+                    <input style="width: 15px;" class="form-check-input" asp-for="RememberMe" />
                     @Html.DisplayNameFor(model => model.RememberMe)
-                    <input style="width: fit-content;" class="form-check-input" asp-for="RememberMe" />
                 </label>
             </div>
             <div class="form-group">

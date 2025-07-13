@@ -6,6 +6,7 @@ namespace CleanArch.Application.ViewModels
     {
         [Required(ErrorMessage = "لطفا {0} را وارد کنید ")]
         [MaxLength(256)]
+        [Display(Name = "نام کاربری")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "لطفا {0} را وارد کنید ")]

@@ -1,14 +1,28 @@
-﻿@model CleanArch.Application.ViewModels.RegisterViewModel
+﻿@using CleanArch.Application.ViewModels
+@model RegisterViewModel
 
 @{
     ViewData["Title"] = "Register";
 }
 
-<h1>Register</h1>
-
+<h1>ثبت نام</h1>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Empty.cshtml";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="alert alert-danger">
+        شما دسترسی ندارید
+    </div>
+}
+<div class="container" onclick="onclick">
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="center">
         <form asp-action="Register">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -31,13 +45,16 @@
                 <input asp-for="Repassword" class="form-control" />
                 <span asp-validation-for="Repassword" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Register" class="btn btn-primary" />
+                <input type="submit" value="ثبت و ورود" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
