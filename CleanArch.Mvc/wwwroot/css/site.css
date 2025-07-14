@@ -120,3 +120,11 @@ body {
         border: 1px solid #ccc;
         font-family: inherit;
     }
+
+
+.bg-image {
+    background-clip: border-box;
+    background-origin: border-box;
+    background-repeat: repeat;
+    background-size: cover;
+}
