@@ -46,10 +46,12 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        filter: blur(8px);
-        background-color: rgba(255, 255, 255, 0.3);  /*سایه مشکی با 40% شفافیت */
+        filter: blur(3px);
+        background-color: rgba(0, 0, 0, 0.19); /*سایه مشکی با 40% شفافیت */
         pointer-events: none; /* تا کلیک‌ها به لایه زیرین بره */
         z-index: -1; /* بفرسته پشت محتوا */
+        background-image: url(/images/bg/3.jpg);
+        background-size: cover;
     }
 
 .container {
@@ -139,5 +141,25 @@ body {
     background: url('../images/landing.jpg') no-repeat center center;
     background-size: auto;
     background-size: cover;
-    padding: 25px 0;
+}
+
+.text {
+    color: black;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: all linear 0.2s;
+    /*text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em blue;*/
+}
+
+text-link {
+    
+
+}
+
+.text:hover {
+/*    text-shadow: 1px 1px 2px black, 0 0 15em white, 0 0 0.5em white !important; */
+}
+
+.control-label{
+    color:white;
 }

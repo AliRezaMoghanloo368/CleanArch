@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CleanArch.Mvc.styles.css" asp-append-version="true" />
 </head>
-<body class="home-page-image" style="background-image:url(/images/bg/1.jpg)">
+<body style="background:#040424">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3 bg-white">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CleanArch.Mvc</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -20,16 +20,16 @@
                 <div class="collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item pull-right">
-                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">نمونه کارها</a>
+                            <a class="text-link text" asp-controller="Account" asp-action="Register">نمونه کارها</a>
                         </li>
                         <li class="nav-item pull-right">
-                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">انواع طراحی</a>
+                            <a class="text-link text" asp-controller="Account" asp-action="Login">انواع طراحی</a>
                         </li>
                         <li class="nav-item pull-right">
-                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">شرایط و قوانین کار</a>
+                            <a class="text-link text" asp-controller="Account" asp-action="Login">شرایط و قوانین کار</a>
                         </li>
                         <li class="nav-item pull-right">
-                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">تماس با ما</a>
+                            <a class="text-link text" asp-controller="Account" asp-action="Login">تماس با ما</a>
                         </li>
                     </ul>
                 </div>
@@ -38,19 +38,19 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item pull-right">
-                                <a class="nav-link text-dark">@User.Identity.Name خوش آمدید !</a>
+                                <a class="text-link text">@User.Identity.Name خوش آمدید !</a>
                             </li>
                             <li class="nav-item pull-right">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">خروج</a>
+                                <a class="text-link text" asp-controller="Account" asp-action="Logout">خروج</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item pull-right">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">ثبت نام</a>
+                                <a class="text-link text" asp-controller="Account" asp-action="Register">ثبت نام</a>
                             </li>
                             <li class="nav-item pull-right">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">ورود</a>
+                                <a class="text-link text" asp-controller="Account" asp-action="Login">ورود</a>
                             </li>
                         }
                     </ul>
