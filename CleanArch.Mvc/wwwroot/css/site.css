@@ -39,7 +39,7 @@ body {
     font-family: "Raleway", sans-serif;
 }
 
-    body::before {
+    /*body::before {
         content: "";
         position: fixed;
         top: 0;
@@ -47,12 +47,12 @@ body {
         right: 0;
         bottom: 0;
         filter: blur(3px);
-        background-color: rgba(0, 0, 0, 0.19); /*سایه مشکی با 40% شفافیت */
-        pointer-events: none; /* تا کلیک‌ها به لایه زیرین بره */
-        z-index: -1; /* بفرسته پشت محتوا */
-        background-image: url(/images/bg/3.jpg);
+        background-color: rgba(0, 0, 0, 0.19);*/ /*سایه مشکی با 40% شفافیت */
+        /*pointer-events: none;*/ /* تا کلیک‌ها به لایه زیرین بره */
+        /*z-index: -1;*/ /* بفرسته پشت محتوا */
+        /*background-image: url(/images/bg/3.jpg);
         background-size: cover;
-    }
+    }*/
 
 .container {
     position: absolute;
@@ -161,5 +161,5 @@ text-link {
 }
 
 .control-label{
-    color:white;
+    color:black;
 }
