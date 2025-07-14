@@ -8,16 +8,32 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CleanArch.Mvc.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body class="home-page-image" style="background-image:url(/images/bg/1.jpg)">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CleanArch.Mvc</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item pull-right">
+                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">نمونه کارها</a>
+                        </li>
+                        <li class="nav-item pull-right">
+                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">انواع طراحی</a>
+                        </li>
+                        <li class="nav-item pull-right">
+                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">شرایط و قوانین کار</a>
+                        </li>
+                        <li class="nav-item pull-right">
+                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">تماس با ما</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex; justify-content-end;">
                     <ul class="navbar-nav flex-grow-1">
                         @if (User.Identity.IsAuthenticated)
                         {
@@ -39,6 +55,7 @@
                         }
                     </ul>
                 </div>
+
             </div>
         </nav>
     </header>
@@ -47,7 +64,6 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 1404 - CleanArch.Mvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -38,6 +38,19 @@ body {
     min-height: 100vh;
     font-family: "Raleway", sans-serif;
 }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        filter: blur(8px);
+        background-color: rgba(255, 255, 255, 0.3);  /*سایه مشکی با 40% شفافیت */
+        pointer-events: none; /* تا کلیک‌ها به لایه زیرین بره */
+        z-index: -1; /* بفرسته پشت محتوا */
+    }
 
 .container {
     position: absolute;
@@ -120,3 +133,11 @@ body {
         border: 1px solid #ccc;
         font-family: inherit;
     }
+
+
+.home-page-image {
+    background: url('../images/landing.jpg') no-repeat center center;
+    background-size: auto;
+    background-size: cover;
+    padding: 25px 0;
+}
