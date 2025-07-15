@@ -148,6 +148,7 @@ body {
     margin: 0 10px;
     text-decoration: none;
     transition: all linear 0.2s;
+    padding: 5px;
     /*text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em blue;*/
 }
 
@@ -157,7 +158,9 @@ text-link {
 }
 
 .text:hover {
-/*    text-shadow: 1px 1px 2px black, 0 0 15em white, 0 0 0.5em white !important; */
+    color: #0a58ca;
+    background: #0000ff12;
+    border-radius: 6px;
 }
 
 .control-label{
