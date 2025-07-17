@@ -2,9 +2,9 @@
 
 namespace CleanArch.Mvc.Controllers
 {
-    public class AboutUsController : Controller
+    public class SamplesController : Controller
     {
-        public IActionResult About()
+        public IActionResult ProgramSamples()
         {
             return View();
         }

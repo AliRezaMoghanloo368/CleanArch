@@ -30,8 +30,8 @@
 html {
     position: relative;
     min-height: 100%;
-        background-image: url(/images/bg/3.jpg);
-    background-size: cover;
+/*        background-image: url(/images/bg/3.jpg);
+    background-size: cover;*/
 }
 
 body {
@@ -211,8 +211,10 @@ text-link {
     align-items: center;
 }
 
-.zmdi {
-    display: inline-block;
-    font: normal normal normal 14px/1 'material';
-    text-rendering: auto;
+.w-100{
+    width:100%;
+}
+
+.h-100{
+    height:100%;
 }
