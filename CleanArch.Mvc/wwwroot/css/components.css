@@ -1,0 +1,48 @@
+﻿.right-menu-section{
+/*    background-color:green;*/
+margin-right:10px;
+}
+
+layout-bar {
+    display: block;
+}
+
+.center-menu-section {
+/*    background-color: blue;*/
+}
+
+.left-menu-section {
+    /*    background-color: red;*/
+    margin-left: 10px;
+}
+
+#lbl-logo {
+    font-size: xx-large;
+    font-weight: 1000;
+}
+
+.center-menu-section {
+    display: none;
+}
+
+@media only screen and (min-width: 576px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    .center-menu-section {
+        display: block;
+    }
+
+    #layout-bar {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+}

@@ -1,5 +1,5 @@
 ﻿html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 * {
@@ -9,24 +9,33 @@
     font-family: Sahel, Helvetica, Arial, sans-serif;
 }
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+}*/
+
+.form-control {
+    border: 1px solid #ced4da5e !important;
+}
+
+.form-check-input {
+    border: 1px solid #ced4da5e !important;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+        background-image: url(/images/bg/3.jpg);
+    background-size: cover;
 }
 
-/*body {
-  margin-bottom: 60px;
-}*/
+body {
+}
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 
@@ -34,43 +43,55 @@ html {
     box-sizing: border-box;
 }
 
-body {
+/*body {
     min-height: 100vh;
     font-family: "Raleway", sans-serif;
+}*/
+
+html::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*filter: blur(1px);*/
+    background-color: rgba(255, 255, 255, 0.86);
+    pointer-events: none;
+    z-index: -1;
+    background-size: cover;
 }
 
-    /*body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        filter: blur(3px);
-        background-color: rgba(0, 0, 0, 0.19);*/ /*سایه مشکی با 40% شفافیت */
-        /*pointer-events: none;*/ /* تا کلیک‌ها به لایه زیرین بره */
-        /*z-index: -1;*/ /* بفرسته پشت محتوا */
-        /*background-image: url(/images/bg/3.jpg);
-        background-size: cover;
-    }*/
-
-.container {
-    position: absolute;
+.center-container {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
-    .container:hover .top:before, .container:hover .top:after, .container:hover .bottom:before, .container:hover .bottom:after, .container:active .top:before, .container:active .top:after, .container:active .bottom:before, .container:active .bottom:after {
-        margin-left: 300px;
-        transform-origin: -300px 50%;
-        transition-delay: 0s;
-    }
-
-    .container:hover .center, .container:active .center {
-        opacity: 1;
-        transition-delay: 0.2s;
-    }
+.container {
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+    margin: auto auto;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    /*width: 100%;
+    position: relative;
+    background-color: #fff;*/
+    /*    border-radius: 15px;
+    -moz-border-radius: 15px;*/
+    /*-webkit-border-radius: 15px;*/
+    /*box-shadow: 0 0 15px #d7dee9;*/
+    /*-moz-box-shadow: 0 0 15px #d7dee9;*/
+    /*-webkit-box-shadow: 0 0 15px #d7dee9;
+    padding: 25px 35px 35px;
+    z-index: 2;
+    min-height: 400px;*/
+}
 
 .top:before, .top:after, .bottom:before, .bottom:after {
     content: "";
@@ -129,9 +150,9 @@ body {
 
     .center input {
         width: 100%;
-/*        padding: 15px;*/
+        /*        padding: 15px;*/
         margin: 5px;
-/*        border-radius: 1px;*/
+        /*        border-radius: 1px;*/
         border: 1px solid #ccc;
         font-family: inherit;
     }
@@ -145,24 +166,53 @@ body {
 
 .text {
     color: black;
-    margin: 0 10px;
+    margin: 0 2px;
+    padding: 0 10px;
     text-decoration: none;
     transition: all linear 0.2s;
-    padding: 5px;
+    /*    padding: 5px;*/
+    border-radius: 3px;
     /*text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em blue;*/
 }
 
 text-link {
-    
-
 }
 
 .text:hover {
-    color: #0a58ca;
+    /*    color: #0a58ca;
     background: #0000ff12;
-    border-radius: 6px;
+    border-radius: 6px;*/
+    color: #fff;
+    background: #1E2125;
 }
 
-.control-label{
-    color:black;
+.control-label {
+    color: black;
+}
+
+.nav-link {
+    color: #0a58ca;
+    padding: 0 10px;
+    text-decoration: none;
+    transition: all linear 0.2s;
+    border-radius: 3px;
+    width: fit-content;
+}
+
+    .nav-link:hover {
+        color: #0343a1;
+        background: #0000ff12;
+        border-radius: 6px;
+    }
+
+#remember-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.zmdi {
+    display: inline-block;
+    font: normal normal normal 14px/1 'material';
+    text-rendering: auto;
 }

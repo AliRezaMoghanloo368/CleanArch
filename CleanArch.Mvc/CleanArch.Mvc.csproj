@@ -29,4 +29,11 @@
     <ProjectReference Include="..\CleanArch.IoC\CleanArch.IoC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Account\Register - Copy.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

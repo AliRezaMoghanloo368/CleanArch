@@ -12,11 +12,9 @@
         شما دسترسی ندارید
     </div>
 }
-<div class="container" onclick="onclick">
-    <div class="top"></div>
-    <div class="bottom"></div>
-    <div class="center">
-        <h2>ورود</h2>
+
+<div class="center-container">
+    <div class="container" onclick="onclick">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -24,25 +22,32 @@
                 <input asp-for="UserName" class="form-control" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div style=" margin-top: 15px;">
-                <input style="width: 15px;" class="form-check-input" asp-for="RememberMe" />
-                <label asp-for="RememberMe" class="form-check-label">
-                    @Html.DisplayNameFor(model => model.RememberMe)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="ورود" class="btn btn-primary" />
+            <br />
+            <div id="remember-entry">
+                <input type="submit" value="ورود" class="btn btn-dark" />
+                <div style="display: inline-block;">
+                    <input style="width: 15px;" class="form-check-input" asp-for="RememberMe" />
+                    <label asp-for="RememberMe" class="form-check-label">
+                        @Html.DisplayNameFor(model => model.RememberMe)
+                    </label>
+                </div>
             </div>
         </form>
-        <h2>&nbsp;</h2>
+        <br />
+        <div class="form-group nav-link d-flex">
+            <a style="margin-right:6px;" asp-controller="Account" asp-action="Register" /> ثبت نام
+        </div>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
