@@ -9,7 +9,6 @@
         <div id="samples-box-carts" class="row">
             @foreach (var item in Model)
             {
-                @* item.Styles = "margin: 10px;"; *@
                 <partial name="../Shared/Partials/_Cart.cshtml" Model="item" />
             }
         </div>
