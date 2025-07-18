@@ -1,28 +1,17 @@
-﻿<div id="samples-container">
+﻿@using CleanArch.Application.ViewModels
+@model List<CartViewModel>
+
+<div id="samples-container">
     <div id="samples-box">
         <h3 class="comments">سلام! ما تیمی از برنامه‌نویسان حرفه‌ای هستیم</h3>
         <h6 class="comments">با تجربه در طراحی و توسعه نرم‌افزارهای دسکتاپ، وب و اپلیکیشن‌های سفارشی</h6>
         <br />
-        <partial name="../Shared/Partials/_Cart.cshtml" />
+        <div id="samples-box-carts" class="row">
+            @foreach (var item in Model)
+            {
+                @* item.Styles = "margin: 10px;"; *@
+                <partial name="../Shared/Partials/_Cart.cshtml" Model="item" />
+            }
+        </div>
     </div>
 </div>
-
-
-<style>
-    #samples-container {
-        padding-inline: 15px;
-    }
-
-    #samples-box {
-        /* background-color: whitesmoke; */
-        border-radius: 15px;
-        height: 600px;
-        padding:10px;
-    }
-
-    .comments {
-        width: 100%;
-        text-align: center;
-    }
-
-</style>
