@@ -24,8 +24,9 @@
             </div>
             <br />
             <div class="form-group">
+                <input asp-for="Password" type="checkbox" onclick="inputPassword()">
                 <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+                <input asp-for="Password" class="form-control" id="input-password" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <br />
@@ -40,8 +41,8 @@
             </div>
         </form>
         <br />
-        <div class="form-group nav-link d-flex">
-            <a style="margin-right:6px;" asp-controller="Account" asp-action="Register" /> ثبت نام
+        <div class="form-group nav-link d-flex justify-content-center w-100">
+            <a style="margin-right:6px; text-align:center;" asp-controller="Account" asp-action="Register" /> ایجاد حساب کاربری
         </div>
     </div>
 </div>
@@ -51,3 +52,4 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+
