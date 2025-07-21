@@ -14,10 +14,9 @@ namespace CleanArch.Application.Services
             _userRepository = userRepository;
         }
 
-        public int AddUser(User user)
+        public void AddUser(User user)
         {
             _userRepository.Create(user);
-            return 0;
         }
 
         public bool CheckWithUserName(string userName)
