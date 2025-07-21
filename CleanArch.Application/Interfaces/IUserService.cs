@@ -8,6 +8,6 @@ namespace CleanArch.Application.Interfaces
         Task<UserViewModel> GetUsers();
         bool CheckWithUserName(string userName);
         User GetUserForLogin(string userName, string password);
-        void AddUser(User user);
+        int AddUser(User user);
     }
 }
