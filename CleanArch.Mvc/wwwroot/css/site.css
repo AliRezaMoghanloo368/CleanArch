@@ -9,12 +9,6 @@
     font-family: Sahel, Helvetica, Arial, sans-serif;
 }
 
-/*@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}*/
-
 .form-control {
     border: 1px solid #ced4da5e !important;
 }
@@ -30,8 +24,6 @@
 html {
     position: relative;
     min-height: 100%;
-/*        background-image: url(/images/bg/3.jpg);
-    background-size: cover;*/
 }
 
 body {
@@ -42,11 +34,6 @@ body {
 *, *:before, *:after {
     box-sizing: border-box;
 }
-
-/*body {
-    min-height: 100vh;
-    font-family: "Raleway", sans-serif;
-}*/
 
 html::before {
     content: "";
@@ -79,18 +66,6 @@ html::before {
     padding: 50px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
-    /*width: 100%;
-    position: relative;
-    background-color: #fff;*/
-    /*    border-radius: 15px;
-    -moz-border-radius: 15px;*/
-    /*-webkit-border-radius: 15px;*/
-    /*box-shadow: 0 0 15px #d7dee9;*/
-    /*-moz-box-shadow: 0 0 15px #d7dee9;*/
-    /*-webkit-box-shadow: 0 0 15px #d7dee9;
-    padding: 25px 35px 35px;
-    z-index: 2;
-    min-height: 400px;*/
 }
 
 .top:before, .top:after, .bottom:before, .bottom:after {
@@ -150,9 +125,7 @@ html::before {
 
     .center input {
         width: 100%;
-        /*        padding: 15px;*/
         margin: 5px;
-        /*        border-radius: 1px;*/
         border: 1px solid #ccc;
         font-family: inherit;
     }
@@ -170,21 +143,13 @@ html::before {
     padding: 0 10px;
     text-decoration: none;
     transition: all linear 0.2s;
-    /*    padding: 5px;*/
     border-radius: 3px;
-    /*text-shadow: 1px 1px 2px black, 0 0 1em white, 0 0 0.2em blue;*/
 }
 
-text-link {
-}
-
-.text:hover {
-    /*    color: #0a58ca;
-    background: #0000ff12;
-    border-radius: 6px;*/
-    color: #fff;
-    background: #1E2125;
-}
+    .text:hover {
+        color: #fff;
+        background: #1E2125;
+    }
 
 .control-label {
     color: black;

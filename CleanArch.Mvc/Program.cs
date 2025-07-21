@@ -42,7 +42,7 @@ namespace CleanArch.Mvc
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Samples}/{action=ProgramSamples}/{id?}");
 
             app.Run();
         }

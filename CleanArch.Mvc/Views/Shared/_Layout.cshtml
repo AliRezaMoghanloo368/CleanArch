@@ -25,16 +25,16 @@
                 <div class=" d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1 p-0">
                         <li class="nav-item pull-right">
-                            <a class="text-link text" asp-controller="Samples" asp-action="ProgramSamples">نمونه کارها</a>
+                            <a class="tab-link text" asp-controller="Samples" asp-action="ProgramSamples" data-id="1">نمونه کارها</a>
                         </li>
                         <li class="nav-item pull-right">
-                            <a class="text-link text" asp-controller="Account" asp-action="Login">انواع طراحی</a>
+                            <a class="tab-link text" asp-controller="Account" asp-action="Login" data-id="2">انواع طراحی</a>
                         </li>
                         <li class="nav-item pull-right">
-                            <a class="text-link text" asp-controller="Account" asp-action="Login">شرایط و قوانین کار</a>
+                            <a class="tab-link text" asp-controller="Account" asp-action="Login" data-id="3">شرایط و قوانین کار</a>
                         </li>
                         <li class="nav-item pull-right">
-                            <a class="text-link text" asp-controller="AboutUs" asp-action="About">تماس با ما</a>
+                            <a class="tab-link text" asp-controller="AboutUs" asp-action="About" data-id="4">تماس با ما</a>
                         </li>
                     </ul>
                 </div>
@@ -61,3 +61,32 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+<script>
+    // وقتی صفحه لود شد، رنگ لینک انتخاب شده را اعمال کن
+    window.addEventListener('DOMContentLoaded', () => {
+        const selectedId = localStorage.getItem('selectedLinkId');
+    if (selectedId) {
+        document.querySelectorAll('.tab-link').forEach(link => {
+            if (link.getAttribute('data-id') === selectedId) {
+                link.style.backgroundColor = 'whitesmoke';
+            } else {
+                link.style.backgroundColor = '';
+            }
+        });
+        }
+    });
+
+    // وقتی روی لینک کلیک شد، رنگش خاکستری شود و ذخیره شود
+    document.querySelectorAll('.tab-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            //e.preventDefault(); // اگر نمیخوای صفحه رفرش بشه
+            const id = this.getAttribute('data-id');
+            localStorage.setItem('selectedLinkId', id);
+
+            // تغییر رنگ لینک‌ها
+            document.querySelectorAll('.tab-link').forEach(l => l.style.backgroundColor = '');
+            this.style.backgroundColor = 'whitesmoke';
+        });
+    });
+</script>

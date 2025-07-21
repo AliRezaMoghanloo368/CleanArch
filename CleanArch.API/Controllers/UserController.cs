@@ -1,6 +1,7 @@
 ﻿
 using CleanArch.Application.Interfaces;
 using CleanArch.Application.ViewModels;
+using CleanArch.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -25,6 +26,7 @@ namespace CleanArch.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            //User user = new User();
             //await _userService.AddUser(userInput);
             return Ok(new { message = "User added" });
         }
