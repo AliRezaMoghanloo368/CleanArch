@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CleanArch.Mvc</title>
+    <title>@ViewData["Title"] -> Ali Reza Moghanloo</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/components.css" asp-append-version="true" />
@@ -16,6 +16,12 @@
             <div class="right-menu-section p-2">
                 <span id="layout-bar">
                     <img src="~/images/icons/menu.svg" />
+                </span>
+                <span>
+                    <profile class="">
+                        <img id="img-profile" src="~/images/icons/user.svg" />
+                        @User.Identity.Name
+                    </profile>
                 </span>
                 <span>
                     <label id="lbl-logo"></label>
