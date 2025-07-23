@@ -6,12 +6,6 @@
     Layout = "~/Views/Shared/_Empty.cshtml";
 }
 
-@if (User.Identity.IsAuthenticated)
-{
-    <div class="alert alert-danger">
-        شما دسترسی ندارید
-    </div>
-}
 <div class="center-container">
     <div class="container" onclick="onclick">
         <form asp-action="Register">
@@ -28,7 +22,7 @@
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <br />
-            <div class="form-group position-relative">
+            <div class="form-group position-relative pointer">
                 <label asp-for="Password" class="control-label"></label>
                 <input asp-for="Password" class="form-control" id="input-password" />
                 <span asp-validation-for="Password" class="text-danger"></span>
@@ -37,7 +31,7 @@
                 </span>
             </div>
             <br />
-            <div class="form-group position-relative">
+            <div class="form-group position-relative pointer">
                 <label asp-for="Repassword" class="control-label"></label>
                 <input asp-for="Repassword" class="form-control" id="input-repassword" />
                 <span asp-validation-for="Repassword" class="text-danger"></span>
@@ -47,7 +41,7 @@
             </div>
             <br />
             <div class="form-group">
-                <input type="submit" value="ثبت و ورود" class="btn btn-dark" />
+                <input type="submit" value="ایجاد حساب و ورود" class="btn btn-dark" />
             </div>
             <br />
             <div class="form-group nav-link d-flex justify-content-center w-100">

@@ -1,16 +1,25 @@
 ﻿@using CleanArch.Application.ViewModels
 @model List<CartViewModel>
 
-<div id="samples-container">
-    <div id="samples-box">
-        <h3 class="comments">سلام! ما تیمی از برنامه‌نویسان حرفه‌ای هستیم</h3>
-        <h6 class="comments">با تجربه در طراحی و توسعه نرم‌افزارهای دسکتاپ، وب و اپلیکیشن‌های سفارشی</h6>
-        <br />
-        <div id="samples-box-carts" class="row">
-            @foreach (var item in Model)
-            {
-                <partial name="../Shared/Partials/_Cart.cshtml" Model="item" />
-            }
+@if (User.Identity.IsAuthenticated)
+{
+    <div id="samples-container">
+        <div id="samples-box">
+            <h3 class="comments">سلام! ما تیمی از برنامه‌نویسان حرفه‌ای هستیم</h3>
+            <h6 class="comments">با تجربه در طراحی و توسعه نرم‌افزارهای دسکتاپ، وب و اپلیکیشن‌های سفارشی</h6>
+            <br />
+            <div id="samples-box-carts" class="row">
+                @foreach (var item in Model)
+                {
+                    <partial name="../Shared/Partials/_Cart.cshtml" Model="item" />
+                }
+            </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="alert alert-danger">
+        شما دسترسی ندارید
+    </div>
+}

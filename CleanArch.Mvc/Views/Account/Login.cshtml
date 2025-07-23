@@ -6,13 +6,6 @@
     Layout = "~/Views/Shared/_Empty.cshtml";
 }
 
-@if (User.Identity.IsAuthenticated)
-{
-    <div class="alert alert-danger">
-        شما دسترسی ندارید
-    </div>
-}
-
 <div class="center-container">
     <div class="container" onclick="onclick">
         <form method="post">
@@ -23,7 +16,7 @@
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
             <br />
-            <div class="form-group position-relative">
+            <div class="form-group position-relative pointer">
                 <label asp-for="Password" class="control-label"></label>
                 <input asp-for="Password" class="form-control" id="input-password" />
                 <span asp-validation-for="Password" class="text-danger"></span>
