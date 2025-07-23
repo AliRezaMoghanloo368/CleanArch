@@ -28,18 +28,22 @@
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <br />
-            <div class="form-group">
-                <input asp-for="Password" type="checkbox" onclick="inputPassword()">
+            <div class="form-group position-relative">
                 <label asp-for="Password" class="control-label"></label>
                 <input asp-for="Password" class="form-control" id="input-password" />
                 <span asp-validation-for="Password" class="text-danger"></span>
+                <span>
+                    <img id="img-password" src="~/images/icons/eye.svg" class="svg-icon" onclick="inputPassword()" />
+                </span>
             </div>
             <br />
-            <div class="form-group">
-                <input asp-for="Repassword" type="checkbox" onclick="inputRepassword()">
+            <div class="form-group position-relative">
                 <label asp-for="Repassword" class="control-label"></label>
                 <input asp-for="Repassword" class="form-control" id="input-repassword" />
                 <span asp-validation-for="Repassword" class="text-danger"></span>
+                <span>
+                    <img id="img-repassword" src="~/images/icons/eye.svg" class="svg-icon" onclick="inputRepassword()" />
+                </span>
             </div>
             <br />
             <div class="form-group">
