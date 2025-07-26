@@ -15,7 +15,11 @@ namespace CleanArch.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            #region IoC
             builder.Services.RegisterServices(builder.Configuration); //in dependency container class
+            #endregion
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -26,7 +30,7 @@ namespace CleanArch.API
             }
 
             app.UseAuthorization();
-
+            app.UseAuthentication();
 
             app.MapControllers();
 

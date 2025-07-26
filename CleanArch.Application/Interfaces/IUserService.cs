@@ -1,4 +1,5 @@
-﻿using CleanArch.Application.ViewModels;
+﻿using CleanArch.Application.Authenticate;
+using CleanArch.Application.ViewModels;
 using CleanArch.Domain.Models;
 
 namespace CleanArch.Application.Interfaces
@@ -8,6 +9,8 @@ namespace CleanArch.Application.Interfaces
         Task<UserViewModel> GetUsers();
         bool CheckWithUserName(string userName);
         User GetUserForLogin(string userName, string password);
-        int AddUser(User user);
+        Task AddAsync(User user);
+        Task<JsonWebToken> LoginAsync(string userName, string password);
+
     }
 }

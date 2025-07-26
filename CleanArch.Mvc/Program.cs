@@ -14,13 +14,7 @@ namespace CleanArch.Mvc
 
             #region IoC
             builder.Services.RegisterServices(builder.Configuration); //in dependency container class
-            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(option =>
-                {
-                    option.LoginPath = "/Account/Login";
-                    option.LogoutPath = "/Account/Logout";
-                    option.ExpireTimeSpan = TimeSpan.FromDays(365);
-                });
+
             #endregion
 
             var app = builder.Build();

@@ -41,7 +41,7 @@ namespace CleanArch.Mvc.Controllers
                 Password = register.Password,
                 Salt = "11111111112"
             };
-            _userService.AddUser(user);
+            _userService.AddAsync(user);
             return View("SuccessRegister", register);
         }
         #endregion

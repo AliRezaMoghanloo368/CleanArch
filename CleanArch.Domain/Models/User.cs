@@ -16,7 +16,7 @@ namespace CleanArch.Domain.Models
             Id = Guid.NewGuid();
         }
 
-        public User(string phoneNumber, string name)
+        public User(string name, string phoneNumber)
         {
             if (string.IsNullOrWhiteSpace(phoneNumber))
             {
