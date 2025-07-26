@@ -34,14 +34,15 @@ namespace CleanArch.Mvc.Controllers
                 ModelState.AddModelError("UserName", "کاربر وارد شده قبلا ثبت نام کرده است");
                 return View(register);
             }
-            User user = new User()
-            {
-                Name = register.UserName,
-                PhoneNumber = register.PhoneNumber,
-                Password = register.Password,
-                Salt = "11111111112"
-            };
-            _userService.AddAsync(user);
+            //User user = new User()
+            //{
+            //    Name = register.UserName,
+            //    PhoneNumber = register.PhoneNumber,
+            //    Password = register.Password,
+            //    Salt = "11111111112"
+            //};
+            //_userService.AddAsync(user);
+
             return View("SuccessRegister", register);
         }
         #endregion
