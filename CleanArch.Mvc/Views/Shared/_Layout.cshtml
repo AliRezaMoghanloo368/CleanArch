@@ -15,7 +15,15 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-transparent d-flex; justify-content-between">
             <div class="right-menu-section p-2">
                 <span id="layout-bar">
-                    <img src="~/images/icons/menu.svg" />
+                    @* <button class="openbtn" onclick="openNav()">&#9776; Toggle Sidepanel</button> *@
+                    <img class="openbtn" onclick="openNav()" src="~/images/icons/menu.svg" />
+                    <div id="mySidepanel" class="sidepanel">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Clients</a>
+                        <a href="#">Contact</a>
+                    </div>
                 </span>
                 <span>
                     <profile class="">
@@ -98,4 +106,14 @@
             this.style.backgroundColor = 'whitesmoke';
         });
     });
+
+    /* Set the width of the sidebar to 250px (show it) */
+    function openNav() {
+      document.getElementById("mySidepanel").style.width = "250px";
+    }
+
+    /* Set the width of the sidebar to 0 (hide it) */
+    function closeNav() {
+      document.getElementById("mySidepanel").style.width = "0";
+    }
 </script>
