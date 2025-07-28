@@ -1,6 +1,5 @@
 ﻿using CleanArch.Application.Interfaces;
 using CleanArch.Application.ViewModels;
-using CleanArch.Domain.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;

@@ -44,7 +44,7 @@ namespace CleanArch.Application.Services
 
         public async Task<JsonWebToken> LoginAsync(string userName, string password)
         {
-            var user = await _userRepository.GetAsync(userName);
+            var user = await _userRepository.GetWithUserName(userName);
             if (user == null)
             {
                 throw new ActioException("invalid_credential",
@@ -62,14 +62,13 @@ namespace CleanArch.Application.Services
 
         public async Task RegisterAsync(User user)
         {
-            var isExistUser = await _userRepository.GetAsync(user.Name);
-            if (isExistUser != null)
+            bool isExistUser = await _userRepository.CheckWithUserName(user.Name);
+            if (isExistUser == true)
             {
                 throw new ActioException("userName_in_use",
                     $"UserName : '{user.Name}' is already in use");
             }
 
-            user = new User(user.Name, user.PhoneNumber);
             user.SetPassword(user.Password, _encrypter);
             await _userRepository.Create(user);
         }

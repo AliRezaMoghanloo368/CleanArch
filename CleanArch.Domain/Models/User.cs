@@ -49,6 +49,6 @@ namespace CleanArch.Domain.Models
         }
 
         public bool ValidatePassword(string password, IEncrypter encrypter)
-        => password.Equals(encrypter.GetHash(password, Salt));
+        => Password.Equals(encrypter.GetHash(password, Salt));
     }
 }

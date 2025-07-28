@@ -37,12 +37,12 @@ namespace CleanArch.Application.Authenticate
             var now = (long)(new TimeSpan(nowUtc.Ticks - centuryBegin.Ticks).TotalSeconds);
 
             var payload = new JwtPayload
-            { 
-                { "sub", userId},
+            {
+                { "sub", userId.ToString() },
                 { "iss", _jwtOptions.Issuer},
                 { "iat", now},
                 { "exp", exp},
-                { "unique_name",userId }
+                { "unique_name", userId.ToString() }
             };
 
             var jwt = new JwtSecurityToken(_jwtHeader, payload);

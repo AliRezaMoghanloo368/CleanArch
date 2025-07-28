@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanArch.API\CleanArch.API.csproj" />
     <ProjectReference Include="..\CleanArch.IoC\CleanArch.IoC.csproj" />
   </ItemGroup>
 

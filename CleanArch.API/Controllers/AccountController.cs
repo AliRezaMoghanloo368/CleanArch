@@ -5,10 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArch.API.Controllers
 {
+    [Route("Account")]
     public class AccountController:Controller
     {
         private readonly IUserService _userService;
-
         public AccountController(IUserService userService)
         {
             _userService = userService;
