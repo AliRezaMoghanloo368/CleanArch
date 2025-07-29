@@ -8,8 +8,9 @@ namespace CleanArch.Application.Interfaces
     {
         Task<UserViewModel> GetUsers();
         bool CheckWithUserName(string userName);
+        User GetWithUserName(string userName);
         User GetUserForLogin(string userName, string password);
         Task<JsonWebToken> LoginAsync(string userName, string password);
-        Task RegisterAsync(User user);
+        Task RegisterAsync(User user, bool checkup = true);
     }
 }

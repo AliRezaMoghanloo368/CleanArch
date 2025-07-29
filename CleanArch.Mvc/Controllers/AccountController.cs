@@ -1,5 +1,8 @@
 ﻿using CleanArch.Application.Interfaces;
 using CleanArch.Application.ViewModels;
+using CleanArch.Domain.Encrypter;
+using CleanArch.Domain.Exceptions;
+using CleanArch.Domain.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -10,9 +13,11 @@ namespace CleanArch.Mvc.Controllers
     public class AccountController : Controller
     {
         private IUserService _userService;
-        public AccountController(IUserService userService)
+        private readonly IEncrypter _encrypter;
+        public AccountController(IUserService userService, IEncrypter encrypter)
         {
             _userService = userService;
+            _encrypter = encrypter;
         }
 
         #region Register
@@ -22,7 +27,7 @@ namespace CleanArch.Mvc.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(RegisterViewModel register)
+        public async Task<IActionResult> Register(RegisterViewModel register)
         {
             if (!ModelState.IsValid)
             {
@@ -33,15 +38,14 @@ namespace CleanArch.Mvc.Controllers
                 ModelState.AddModelError("UserName", "کاربر وارد شده قبلا ثبت نام کرده است");
                 return View(register);
             }
-            //User user = new User()
-            //{
-            //    Name = register.UserName,
-            //    PhoneNumber = register.PhoneNumber,
-            //    Password = register.Password,
-            //    Salt = "11111111112"
-            //};
-            //_userService.AddAsync(user);
-
+            User user = new User()
+            {
+                Name = register.UserName,
+                PhoneNumber = register.PhoneNumber,
+                Password = register.Password,
+                CreateAt = DateTime.UtcNow,
+            };
+            await _userService.RegisterAsync(user, false);
             return View("SuccessRegister", register);
         }
         #endregion
@@ -60,8 +64,8 @@ namespace CleanArch.Mvc.Controllers
                 return View(login);
             }
 
-            var user = _userService.GetUserForLogin(login.UserName, login.Password);
-            if (user == null)
+            var user = _userService.GetWithUserName(login.UserName);
+            if (user == null || !user.ValidatePassword(login.Password, _encrypter))
             {
                 ModelState.AddModelError("UserName", "اطلاعات صحیح نیست");
                 return View(login);

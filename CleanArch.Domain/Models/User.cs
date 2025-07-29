@@ -36,7 +36,7 @@ namespace CleanArch.Domain.Models
             CreateAt = DateTime.Now;
         }
 
-        public void SetPassword(string password, IEncrypter encrypter)
+        public string SetPassword(string password, IEncrypter encrypter)
         {
             if (string.IsNullOrWhiteSpace(password))
             {
@@ -46,6 +46,7 @@ namespace CleanArch.Domain.Models
 
             Salt = encrypter.GetSalt();
             Password = encrypter.GetHash(password, Salt);
+            return Password;
         }
 
         public bool ValidatePassword(string password, IEncrypter encrypter)

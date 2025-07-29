@@ -30,6 +30,11 @@ namespace CleanArch.Application.Services
             return _userRepository.CheckWithUserName(userName).Result;
         }
 
+        public User GetWithUserName(string userName)
+        {
+            return _userRepository.GetWithUserName(userName).Result;
+        }
+
         public User GetUserForLogin(string userName, string password)
         {
             return _userRepository.GetUserForLogin(userName, password).Result;
@@ -60,13 +65,16 @@ namespace CleanArch.Application.Services
             return _jwtHandler.Create(user.Id);
         }
 
-        public async Task RegisterAsync(User user)
+        public async Task RegisterAsync(User user, bool checkup = true)
         {
-            bool isExistUser = await _userRepository.CheckWithUserName(user.Name);
-            if (isExistUser == true)
+            if (checkup)
             {
-                throw new ActioException("userName_in_use",
-                    $"UserName : '{user.Name}' is already in use");
+                bool isExistUser = await _userRepository.CheckWithUserName(user.Name);
+                if (isExistUser == true)
+                {
+                    throw new ActioException("userName_in_use",
+                        $"UserName : '{user.Name}' is already in use");
+                }
             }
 
             user.SetPassword(user.Password, _encrypter);

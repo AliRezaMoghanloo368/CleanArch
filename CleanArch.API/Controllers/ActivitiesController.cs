@@ -11,6 +11,7 @@ namespace CleanArch.API.Controllers
         {
         }
 
+        [HttpGet]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public IActionResult Get() => Content("secure");
     }
