@@ -19,10 +19,11 @@
                     <img class="openbtn" onclick="openNav()" src="~/images/icons/menu.svg" />
                     <div id="mySidepanel" class="sidepanel">
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        <a href="#">About</a>
-                        <a href="#">Services</a>
-                        <a href="#">Clients</a>
-                        <a href="#">Contact</a>
+                        <a data-id="1" class="tab-link text" asp-controller="Samples" asp-action="ProgramSamples" onclick="closeNav()">نمونه کارها</a>
+                        <a data-id="2" class="tab-link text" asp-controller="Account" asp-action="Login">انواع طراحی</a>
+                        <a data-id="3" class="tab-link text" asp-controller="Account" asp-action="Login">شرایط و قوانین کار</a>
+                        <a data-id="4" class="tab-link text" asp-controller="AboutUs" asp-action="About">تماس با ما</a>
+                        <a data-id="5" class="tab-link text" asp-controller="Account" asp-action="Logout">خروج</a>
                     </div>
                 </span>
                 <span>
