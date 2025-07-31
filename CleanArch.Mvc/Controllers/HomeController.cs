@@ -17,15 +17,11 @@ namespace CleanArch.Mvc.Controllers
             _userService = userService;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             UserViewModel model = _userService.GetUsers().Result;
             return View(model);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

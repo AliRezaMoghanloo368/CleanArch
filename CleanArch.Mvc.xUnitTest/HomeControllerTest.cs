@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
 
-public class HomeControllerTests
+public class HomeControllerTest
 {
     [Fact]
     public void Index_ReturnsViewResult_WithUserViewModel()
